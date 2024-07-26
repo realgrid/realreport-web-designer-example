@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>r2 console</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="app-shell">
+            <%- include('./header.ejs') %>
+            <div>
+                <article>
+                    <form class="custom-container" method="post">
+                        <h3>리포트 양식 수정하기</h3>
+
+                        <div>
+                            <div>리포트 양식 아이디</div>
+                            <div><%=r2.id%></div>
+                        </div>
+                        <div>
+                            <label for="path">리포트 양식 경로</label>
+                            <input
+                                type="text"
+                                name="path"
+                                placeholder="리포트 양식을 저장할 경로를 입력해주세요"
+                                value="<%=r2.path%>"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">리포트 양식 이름</label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="리포트 양식의 이름을 입력해주세요"
+                                value="<%=r2.name%>"
+                            />
+                        </div>
+                        <div class="btn-group">
+                            <a
+                                class="custom-button"
+                                href="#"
+                                onclick="history.back()"
+                            >
+                                뒤로가기
+                            </a>
+                            <button class="custom-button" type="submit">
+                                수정하기
+                            </button>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </body>
+</html>

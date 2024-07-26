@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>r2 console</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="app-shell">
+            <%- include('./header.ejs') %>
+            <div>
+                <article>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%">ID</th>
+                                <th style="width: 10%">경로</th>
+                                <th style="width: 20%">이름</th>
+                                <th style="width: 15%">생성일</th>
+                                <th style="width: 15%">수정일</th>
+                                <th style="width: 8%">다운로드</th>
+                                <th style="width: 8%">수정</th>
+                                <th style="width: 8%">삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (const r2 of r2List) { %> 
+                            <tr>
+                                <td><%=r2.id%></td>
+                                <td><%=r2.path%></td>
+                                <td>
+                                    <a href="/reports/detail/<%=r2.id%>"
+                                        ><%=r2.name%></a
+                                    >
+                                </td>
+                                <td><%=r2.createdAt%></td>
+                                <td><%=r2.updatedAt%></td>
+                                <td>
+                                    <form action="<%=`/reports/download/${r2.id}`%>" method="get">
+                                        <button type="submit" 
+                                                class="custom-button link-button"
+                                        >다운로드</button>
+                                    </form>
+                                </td>
+                                <td><a href="<%=`/reports/update/${r2.id}`%>">수정</a></td>
+                                <td>
+                                    <form
+                                        action="<%=`/reports/delete/${r2.id}`%>"
+                                        method="post"
+                                    >
+                                        <button
+                                            type="submit"
+                                            class="custom-button link-button"
+                                        >삭제</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+        </div>
+    </body>
+</html>

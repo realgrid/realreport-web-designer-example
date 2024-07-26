@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>r2 console</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="app-shell">
+            <%- include('./header.ejs') %>
+            <div>
+                <article>
+                    <form
+                        class="custom-container"
+                        method="post"
+                        enctype="multipart/form-data"
+                    >
+                        <h3>리포트 양식 추가하기</h3>
+                        <div>
+                            <label for="path">리포트 양식 경로</label>
+                            <input
+                                type="text"
+                                name="path"
+                                placeholder="리포트 양식을 저장할 경로를 입력해주세요"
+                                value="/"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">리포트 양식 이름</label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="리포트 양식의 이름을 입력해주세요"
+                            />
+                        </div>
+                        <div>
+                            <label for="r2data">리포트 양식 파일</label>
+                            <input type="file" name="r2data" />
+                        </div>
+                        <div class="btn-group">
+                            <a
+                                class="custom-button"
+                                href="#"
+                                onclick="history.back()"
+                            >
+                                뒤로가기
+                            </a>
+                            <button class="custom-button" type="submit">
+                                추가하기
+                            </button>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </body>
+</html>

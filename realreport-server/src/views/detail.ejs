@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>r2 console</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="app-shell">
+            <%- include('./header.ejs') %>
+            <div>
+                <article>
+                    <div class="custom-container">
+                        <div>
+                            <div>리포트 양식 아이디</div>
+                            <div><%=r2.id%></div>
+                        </div>
+                        <div>
+                            <div>리포트 양식 경로</div>
+                            <div><%=r2.path%></div>
+                        </div>
+                        <div>
+                            <label for="name">리포트 양식 이름</label>
+                            <div><%=r2.name%></div>
+                        </div>
+                        <div>
+                            <label for="name">생성일</label>
+                            <div><%=r2.createdAt%></div>
+                        </div>
+                        <div>
+                            <label for="name">수정일</label>
+                            <div><%=r2.updatedAt%></div>
+                        </div>
+                        <div class="btn-group">
+                            <form
+                                action="<%=`/reports/download/${r2.id}`%>"
+                                method="get"
+                            >
+                                <button type="submit" class="custom-button">
+                                    다운로드
+                                </button>
+                            </form>
+                            <a class="custom-button" href="/"> 목록으로 </a>
+                            <a
+                                class="custom-button"
+                                href="<%=`/reports/update/${r2.id}`%>"
+                            >
+                                수정하기
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </body>
+</html>

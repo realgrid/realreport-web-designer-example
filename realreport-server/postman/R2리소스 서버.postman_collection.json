@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "ab3d83b5-db91-433e-9552-c760f1c07ccf",
+		"name": "R2리소스 서버",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15440152",
+		"_collection_link": "https://wooritech-r2.postman.co/workspace/wooritech-r2-Workspace~3232df81-9d6c-4d3a-88ff-3e02bdcdd9ee/collection/15440152-ab3d83b5-db91-433e-9552-c760f1c07ccf?action=share&source=collection_link&creator=15440152"
+	},
+	"item": [
+		{
+			"name": "리포트양식 API",
+			"item": [
+				{
+					"name": "리포트 양식 목록 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/reports"
+					},
+					"response": []
+				},
+				{
+					"name": "리포트 양식 다운로드",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/reports/1"
+					},
+					"response": []
+				},
+				{
+					"name": "리포트 양식데이터 생성",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"/my\",\n    \"name\": \"my-report-1\",\n    \"r2Data\": \"{\\\"report\\\":{\\\"name\\\":\\\"my-report-1\\\",\\\"type\\\":\\\"report\\\",\\\"paperSize\\\":\\\"A4\\\",\\\"paperWidth\\\":\\\"210mm\\\",\\\"paperHeight\\\":\\\"297mm\\\",\\\"marginLeft\\\":\\\"12mm\\\",\\\"marginRight\\\":\\\"12mm\\\",\\\"marginTop\\\":\\\"15mm\\\",\\\"marginBottom\\\":\\\"15mm\\\"},\\\"page\\\":{\\\"name\\\":\\\"reportPage\\\",\\\"type\\\":\\\"report\\\",\\\"pageHeader\\\":{\\\"name\\\":\\\"pageHeader\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"reportHeader\\\":{\\\"name\\\":\\\"reportHeader\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"reportFooter\\\":{\\\"name\\\":\\\"reportFooter\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"pageFooter\\\":{\\\"name\\\":\\\"pageFooter\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"body\\\":{\\\"itemGap\\\":4,\\\"items\\\":[]}},\\\"assets\\\":{\\\"/\\\":[]},\\\"data\\\":{},\\\"guid\\\":\\\"a089c90e-049e-40db-bc72-3b48b28a1110\\\"}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/reports"
+					},
+					"response": []
+				},
+				{
+					"name": "리포트 양식 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/reports/8"
+					},
+					"response": []
+				},
+				{
+					"name": "리포트 양식 수정",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"/\",\n    \"name\": \"my-updated-report-1\",\n    \"r2Data\": \"{\\\"report\\\":{\\\"name\\\":\\\"my-updated-report-1\\\",\\\"type\\\":\\\"report\\\",\\\"paperSize\\\":\\\"A4\\\",\\\"paperWidth\\\":\\\"210mm\\\",\\\"paperHeight\\\":\\\"297mm\\\",\\\"marginLeft\\\":\\\"12mm\\\",\\\"marginRight\\\":\\\"12mm\\\",\\\"marginTop\\\":\\\"15mm\\\",\\\"marginBottom\\\":\\\"15mm\\\"},\\\"page\\\":{\\\"name\\\":\\\"reportPage\\\",\\\"type\\\":\\\"report\\\",\\\"pageHeader\\\":{\\\"name\\\":\\\"pageHeader\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"reportHeader\\\":{\\\"name\\\":\\\"reportHeader\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"reportFooter\\\":{\\\"name\\\":\\\"reportFooter\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"pageFooter\\\":{\\\"name\\\":\\\"pageFooter\\\",\\\"height\\\":0,\\\"visible\\\":false},\\\"body\\\":{\\\"itemGap\\\":4,\\\"items\\\":[]}},\\\"assets\\\":{\\\"/\\\":[]},\\\"data\\\":{},\\\"guid\\\":\\\"a089c90e-049e-40db-bc72-3b48b28a1110\\\"}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/reports/6"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}

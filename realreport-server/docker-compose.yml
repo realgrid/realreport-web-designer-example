@@ -1,0 +1,16 @@
+services:
+    # Postgres 설정
+    # - https://hub.docker.com/_/postgres
+    db:
+        image: postgres:14.5-alpine
+        volumes:
+            - r2-resouce-db:/var/lib/postgresql/data
+        ports:
+            - 30700:5432
+        environment:
+            POSTGRES_DB: r2db
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: admin
+
+volumes:
+    r2-resouce-db:

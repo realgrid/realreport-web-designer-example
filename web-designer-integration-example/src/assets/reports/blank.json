@@ -1,0 +1,48 @@
+{
+    "report": {
+        "name": "blank",
+        "type": "report",
+        "paperSize": "A4",
+        "paperWidth": "210mm",
+        "paperHeight": "297mm",
+        "marginLeft": "12mm",
+        "marginRight": "12mm",
+        "marginTop": "15mm",
+        "marginBottom": "15mm"
+    },
+    "page": {
+        "name": "reportPage",
+        "type": "report",
+        "pageHeader": {
+            "name": "pageHeader"
+        },
+        "reportHeader": {
+            "name": "reportHeader",
+            "items": [
+                {
+                    "type": "text",
+                    "left": "",
+                    "right": "",
+                    "text": "Report Header",
+                    "styles": {
+                        "fontSize": "30px",
+                        "fontWeight": "bold"
+                    }
+                }
+            ]
+        },
+        "reportFooter": {
+            "name": "reportFooter"
+        },
+        "pageFooter": {
+            "name": "pageFooter"
+        },
+        "body": {
+            "name": "pageBody"
+        }
+    },
+    "assets": {
+        "/": []
+    },
+    "data": {}
+}
